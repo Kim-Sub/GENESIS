@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제네시스 회원가입</title>
+<link rel="stylesheet" href='./css/reset.css'>
+<link rel="stylesheet" href='./css/style.css'>
+
+<script src='./js/jquery-3.7.0.min.js'></script>
+<script src='./js/jquery.touchSwipe.min.js'></script>
+<script src='./js/typed.js'></script>
+<script src='./js/script.js' defer ></script>
+</head>
+<body>
+    <div id="swiper">
+        <div id="joinJenesis">
+            <!-- fisrt page -->
+            <div class="wrap back">
+                <p>멤버쉽에 가입하여 월간서비스, 프로모션 등 더 많은 혜택을 누려보세요. <br>
+                제네시스 소유자라면 누구나 멤버쉽에 가입할 수 있습니다. </p>
+                <p class="type"></p>
+                <div class="blue-line line"></div>
+                <div class="red-line line"></div>
+            </div>
+            <!-- second page -->
+            <form action="./login.html" method="post" name="signUp" id="signUp"></form>
+            <div class="wrap join center">  
+                <div class="joinBox">
+                    <div class="joinNav"> 
+                        <a href="#"><div class="logo"></div></a>
+                        <ul class="center">
+                            <li><a href="javascript:" class="on">멤버쉽 가입하기</a></li>
+                            <li><a href="javascript:">차량/차대번호 검색</a></li>
+                            <li><a href="javascript:">둘러보기</a></li>
+                            <li><a href="javascript:">혜택 안내</a></li>
+                        </ul>
+                    </div>
+                    <div class="joinBody">
+                        <legend class="ir_so">회원가입</legend>
+                        <!-- Left -->
+                        <div class="joinLeft">
+                            <ul>
+                                <li class="id-section">
+                                    <label for="idArea" class="message">이름</label>
+                                    <span id="idMes" class="message"></span>
+                                    <input type="text" id="idArea" class="inputbox" required size="30" placeholder="실소유주 이름">
+                                    <button>차량 확인</button>
+                                </li>
+                                <li>
+                                    <label for="pwArea">차대번호</label>
+                                    <span id="pwMes" class="message"></span>
+                                    <input type="text" id="pwArea" class="inputBox" required size="30" placeholder="17자리의 영문과 숫자로 구성">
+                                </li>
+                                <span class="genderArea">차종</span>
+                                <li id="car-vari">
+                                    <div class="sedanImg">
+                                        <img src='./img/png-sedan.png' alt="">
+                                        <input type="radio" name="car" id="sedan">
+                                        <label for="sedan" class="car sedan">세단</label>
+                                    </div>
+                                    <div class="suvImg">
+                                        <img src='./img/png-suv.png' alt="">
+                                        <input type="radio" name="car" id="suv">
+                                        <label for="suv" class="car suv">SUV</label>
+                                    </div>
+                                    <div class="convertibleImg">
+                                        <img src='./img/png-convertible.png' alt="" >
+                                        <input type="radio" name="car" id="convertible">
+                                        <label for="convertible" class="car convertible">컨버터블</label>
+                                    </div>
+                                    <span id="gMes" class="gendermessage"></span>
+                                </li>
+                                <li class="carPurpose">
+                                    <label>차량 이용 주목적</label>
+                                    <select name="car-purpose" id="car-purpose" value="">
+                                       <option >───select───</option>
+                                       <option value="출퇴근">출퇴근</option>
+                                       <option value="패밀리카">패밀리카</option>
+                                       <option value="사업용">사업용</option>
+                                       <option value="취미생활">취미생활</option>
+                                       <option value="여행">여행</option>
+                                       <option value="다용도">다용도</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Right -->
+                        <div class="joinRight ">
+                            <ul>
+                                <li>
+                                    <label for="phone">휴대전화</label>
+                                    <span id="phMes" class="message"></span>
+                                    <input type="text" id="phone" class="inputBox" required size="30" placeholder="'-' 구분 없이 입력">
+                                </li>
+                                <li>
+                                    <label for="email">이메일</label>
+                                    <span id="eMes" class="message"></span>
+                                    <input type="text" id="email" class="inputBox" required size="30" placeholder="이메일 주소">
+                                </li>
+
+                                <li>
+                                    <input type="button" value="▶ LET GENESIS" class="btn" id="submit">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+$('.wrap').each(function(index){
+    $(this).on('mousewheel DOMMouseScroll', function(e){
+        e.preventDefault();
+        browser = window.navigator.userAgent.toLowerCase().indexOf('firefox');
+        if(browser >= 0){
+            wheelDelta = -(e.detail*40);
+        }else{
+            wheelDelta = e.originalEvent.wheelDelta;
+        }
+        if(wheelDelta < 0){
+            if(index < $('.wrap').length - 1){
+                $('html, body').stop().animate({scrollLeft: $(this).next().offset().left}, 500)
+            }
+        }else{
+            if(index > 0 ){
+                $('html, body').stop().animate({scrollLeft: $(this).prev().offset().left}, 500)
+            }
+        }
+    })
+})
+$('.type').typed({
+        strings:['▶ 화면을 드래그하여 GENESIS 차량등록을 완료하세요.'],
+        typeSpeed:100,
+        backDelay:600,
+        loop:true
+    })
+
+
+    // 해당 화면이 보일때마다 재생하게끔 해줘
+
+    </script>
+</body>
+</html>

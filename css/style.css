@@ -1,0 +1,76 @@
+@font-face {font-family: GenesisSans; font-style: 'normal'; font-weight: 400;
+    src: url(../font/GenesisSans.ttf) format('truetype');}
+    
+*{padding: 0;margin: 0;}
+body{height: 100vh; width: 100vw; overflow: hidden; font-family:GenesisSans ;}
+.wrap{height: 100vh; width: 100vw; position: relative;}
+#joinJenesis{height: 100%; width: 200%;  display: flex; flex-direction: row;}
+.center{display: flex; align-items: center; justify-content: center;}
+.on{font-weight: bold; color: #fff;}
+
+/* fisrt page */
+.back{background: url(../img/joinMain.jpg) center center; background-repeat : no-repeat; background-size : cover;  text-align: center;  animation: movemove 3.5s forwards; }
+            /* 배경(차) 움직이는 애니매이션 */
+ @keyframes movemove{ 
+    0%{background-size: 100% ;}
+    100%{background-size: 165%; background-position: center -280px;}
+} 
+
+.back>p{position: absolute; color: white; bottom: 0%; left: 50%; transform: translateX(-50%); font-weight: bold; margin-bottom: 160px; line-height: 1.7; font-size: 16px; opacity: .9; position: fixed;}
+.back>.type{margin-bottom: 130px;}
+
+.line{height: 50px; width: 480px;  opacity: 1; position: absolute; top: 72%; box-shadow: 3px 3px 15px 3px rgba(0,0,0,.7);position: fixed; }
+.blue-line{border-top: 5px solid rgb(255, 255, 255); border-bottom:5px solid rgb(0, 47, 111); animation: flow_line_blue 5s }
+.red-line{border-top: 5px solid rgb(255, 255, 255); border-bottom:5px solid rgb(137, 56, 73);  right: 0%; animation: flow_line_red 5s;}
+
+@keyframes flow_line_blue{from{transform: translateX(-100%)}to{transform: translateX(0%)}
+95%{border-top: 5px solid rgb(2, 45, 98)}
+100%{border-top: 5px solid rgb(255, 255, 255)}}
+@keyframes flow_line_red{from{transform: translateX(100%)}to{transform: translateX(0%)}
+95%{border-top: 5px solid  rgb(159, 61, 76);}
+100%{border-top: 5px solid rgb(255, 255, 255)}}
+
+
+
+/* second page - top Nav */
+.join{background: url(../img/joinBack.jpg); background-repeat : no-repeat; background-size : cover; font-size: 15px; color: #bbb;}
+.joinBox{width: 70%; height: 60%; background: rgba(255, 255, 255, 0.2) }
+.joinBox>.joinNav{width: 100%; height: 10% ;display: flex; justify-content: space-between; background:rgba(0, 0, 0, .7)}
+.joinBox>.joinNav>a{height: 100%; width: 20%; margin-left: 3%;}
+.joinBox>.joinNav>a>.logo{background: url(../img/logo.png)no-repeat center; height: 100%; width: 100%; }
+.joinBox>.joinNav>ul{float: left; width: 100%;justify-content: left; margin-left: 50px;}
+.joinBox>.joinNav>ul>li{list-style: none;margin-right: 50px;}
+.joinBox>.joinNav>ul>li>a{text-decoration: none; color: #bbb;}
+.joinBox>.joinNav>ul>li>a.on{color: #fff;}
+
+/* second page - Left, Right 공통  */
+.joinBody{width: 100%; height: 100% ; display: flex;}
+.joinBody>div{width: 50%; height: 100%; padding: 50px; }
+.joinBody>div>ul{height: 100% ;display: flex; flex-direction: column; margin-left: 50px;}
+.joinBody>div>ul>li{position: relative; padding: 10px 0; display: flex;  flex-direction: row; margin-bottom: 40px;height: 50px; width: 100%; justify-content: space-between;}
+
+
+.joinBody>div>ul>li>label{ font-weight: 500; color:white; font-size: 18px;}
+.joinBody>div>ul>li>span.message{position: absolute;  top: 12px; margin-left: 80px; width: 100%;}
+.joinBody>div>ul>li>input{margin: 5px 0 25px 0; padding: 16px 10px; box-sizing: border-box; border: none; height: 50px; width: 410px;   position: absolute; top: 50%; box-shadow: 3px 3px 15px 3px rgba(0,0,0,.7); }
+
+
+.joinBody>div>ul .id-section button{ background:rgba(0, 0, 0, .7); color: #fff;padding: 5px 8px; cursor: pointer; font-size: 15px; border-radius: 5px; height: 30px;  position: absolute; top: 50px; left: 315px; }
+
+.genderArea{font-weight: 500; color:white; font-size: 18px;}
+.joinLeft>ul{padding-left: 100px;}
+.joinLeft>ul>li>div>img{height:50px ; width: 50px*2.7;}
+
+.carPurpose{display: flex; align-items: center;}
+#car-purpose{padding: 1px 10px; box-sizing: border-box; border: none; height: 30px;  box-shadow: 3px 3px 15px 3px rgba(0,0,0,.7); width: 200px;}
+#car-purpose>option{font-size: 15px; color: rgba(0,0,0,.7);;}
+
+
+.joinRight>ul{padding-right: 100px;}
+.joinRight>ul>li>.btn{border: none; background:rgba(0, 0, 0, .7); color: #fff; padding: 16px; width: 100%; height: 70px; font-size: 24px; cursor: pointer; display: block; text-align: center; border-radius: 5px; }
+
+.joinRight>ul>li>span.message{position: absolute;  top: 12px; margin-left: 80px; width: 100%; }
+
+
+
+
